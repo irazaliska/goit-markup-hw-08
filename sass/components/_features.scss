@@ -1,0 +1,35 @@
+.features {
+  @include section;
+
+  &__icon {
+    @include flex-center;
+    margin-bottom: 30px;
+    width: 270px;
+    height: 120px;
+    background-color: var(--secondary-bg-color);
+    border-radius: 4px;
+  }
+
+  &__list {
+    @extend %list;
+    display: flex;
+  }
+
+  &__item {
+    width: 270px;
+    line-height: 1.71;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    color: var(--tittle-text-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+  }
+}
