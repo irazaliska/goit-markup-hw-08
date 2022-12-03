@@ -1,7 +1,20 @@
 .contacts {
   @extend %list;
   display: flex;
-  gap: 30px;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    gap: 30px;
+  }
 
   &__link {
     @extend %link;

@@ -1,15 +1,25 @@
 .clients {
-  @include section;
+  @extend %section;
 
   &__list {
     @extend %list;
+
     @include flex-center;
+    flex-wrap: wrap;
     gap: 30px;
   }
 
   &__item {
-    width: 170px;
-    height: 90px;
+    flex-basis: calc((100% - 30px) / 2);
+    height: 92px;
+
+    @media screen and (min-width: 768px) {
+      flex-basis: calc((100% - 30px * 2) / 3);
+    }
+
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc((100% - 30px * 5) / 6);
+    }
   }
 
   &__link {

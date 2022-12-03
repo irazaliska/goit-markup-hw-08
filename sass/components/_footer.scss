@@ -1,50 +1,60 @@
 .footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  @extend %section;
   background-color: var(--footer-color);
 
   .container {
-    display: flex;
-    align-items: baseline;
+    @media screen and (max-width: 1199px) {
+      text-align: center;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: baseline;
+    }
+
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   .logo {
-    display: block;
+    display: inline-block;
     margin-bottom: 20px;
   }
 
   &__contacts {
-    margin-right: 70px;
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 60px;
+    }
   }
 
-  .address {
-    margin-bottom: 9px;
+  .address__list {
+    @extend %list;
+    font-style: normal;
+  }
 
-    &__link {
-      @extend %link;
+  .address__item {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.71;
+
+    &:first-child {
       color: var(--primary-bg-color);
-      font-style: normal;
-      transition: color var(--trns);
     }
 
-    &__link:hover,
-    &__link:focus {
-      color: var(--accent-color);
+    &:not(:last-child) {
+      margin-bottom: 9px;
     }
   }
 
-  .contacts {
-    flex-direction: column;
-    gap: 9px;
+  .address__link {
+    @extend %link;
+    transition: color var(--trns);
 
-    &__link {
-      color: rgba(255, 255, 255, 0.6);
-      line-height: 1.5;
-      transition: color var(--trns);
-    }
-
-    &__link:hover,
-    &__link:focus {
+    &:hover,
+    &:focus {
       color: var(--accent-color);
     }
   }
@@ -58,10 +68,13 @@
   }
 
   .socials {
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 60px;
+    }
+
     &__link {
       background-color: rgba(255, 255, 255, 0.1);
       color: var(--primary-bg-color);
-
       transition: background-color var(--trns);
     }
 
@@ -71,39 +84,50 @@
     }
   }
 
-  &__subscription {
-    margin-left: auto;
-  }
-
   &__form {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    @media screen and (min-width: 768px) {
+      width: 450px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 570px;
+    }
 
     .btn {
       @include flex-center;
       padding: 10px 28px;
+
+      @media screen and (max-width: 1199px) {
+        margin: 0 auto;
+      }
     }
   }
 
   &__input {
     padding: 15px 16px;
-    width: 358px;
+    width: 100%;
     height: 50px;
+    color: rgba(255, 255, 255, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
     background: transparent;
-    color: rgba(255, 255, 255, 0.6);
 
     &::placeholder {
       font-size: 16px;
       line-height: 1.25;
       color: rgba(255, 255, 255, 0.6);
     }
+
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 20px;
+    }
   }
 
-  .send-icon {
+  &__send-icon {
     margin-left: 10px;
   }
 }
