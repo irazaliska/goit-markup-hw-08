@@ -13,7 +13,7 @@
   background-position: center;
   background-size: cover;
 
-  // Mobile screen
+  // Mobile
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/hero/imgh_m@1x.jpg);
 
@@ -22,7 +22,7 @@
       url(../images/hero/imgh_m@2x.jpg);
   }
 
-  // Tablet screen
+  // Tablet
   @media screen and (min-width: 481px) {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
       url(../images/hero/imgh_t@1x.jpg);
@@ -33,7 +33,7 @@
     }
   }
 
-  // Desktop screen
+  // Desktop
   @media screen and (min-width: 769px) {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
       url(../images/hero/imgh_d@1x.jpg);
