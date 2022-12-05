@@ -12,20 +12,14 @@
   &__list {
     @extend %list;
 
-    @media screen and (min-width: 768px) {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
   }
 
   &__item {
+    flex-basis: 100%;
     line-height: 1.71;
-    &:not(:last-child) {
-      @media screen and (max-width: 767px) {
-        margin-bottom: 30px;
-      }
-    }
 
     @media screen and (min-width: 768px) {
       flex-basis: calc((100% - 30px) / 2);

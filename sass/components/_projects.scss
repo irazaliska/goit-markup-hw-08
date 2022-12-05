@@ -1,14 +1,13 @@
 .projects__list {
   @extend %list;
 
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .projects__item {
+  flex-basis: 100%;
   transition: box-shadow var(--trns);
 
   &:hover,
@@ -17,14 +16,8 @@
       1px 4px 6px rgba(0, 0, 0, 0.16);
   }
 
-  &:not(:last-child) {
-    @media screen and (max-width: 767px) {
-      margin-bottom: 30px;
-    }
-  }
-
   @media screen and (min-width: 768px) {
-    flex-basis: calc((100% - 30px) / 2);
+    flex-basis: calc((100% - 30px * 1) / 2);
   }
 
   @media screen and (min-width: 1200px) {
