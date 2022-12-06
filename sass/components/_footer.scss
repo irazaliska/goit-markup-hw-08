@@ -1,5 +1,5 @@
 .footer {
-  @extend %section;
+  @include section(60px, 60px);
   background-color: var(--footer-color);
 
   .container {
