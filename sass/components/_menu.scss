@@ -61,7 +61,7 @@
   &__link {
     @extend %link;
     font-weight: 500;
-    font-size: 40px;
+    font-size: 9vw;
     line-height: 1.17;
     letter-spacing: 0.02em;
     color: var(--tittle-text-color);
@@ -86,15 +86,23 @@
     letter-spacing: 0.02em;
 
     &.tel {
-      font-size: 34px;
+      font-size: 7vw;
       line-height: 1.18;
       color: var(--accent-color);
+
+      @media (min-width: 480px) {
+        font-size: 40px;
+      }
     }
 
     &.email {
-      font-size: 24px;
+      font-size: 5vw;
       line-height: 1.17;
       color: var(--primary-text-color);
+
+      @media (min-width: 480px) {
+        font-size: 24px;
+      }
     }
   }
 }
@@ -112,6 +120,10 @@
     &:not(:last-child) {
       border-right: 1px solid rgba(33, 33, 33, 0.2);
     }
+  }
+
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
   }
 
   &__link {
